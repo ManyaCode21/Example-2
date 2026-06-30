@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loop repeat</title>
+</head>
+<body>
+    
+<script>
+
+// ================= FOR LOOP =================
+// We use a for loop when we know exactly
+// how many times we want to repeat something.
+
+// Print numbers from 1 to 10
+console.log("For Loop: 1 to 10");
+for (let i = 1; i <= 10; i++) {
+    console.log(i);
+}
+
+// Print numbers from 10 to 1
+console.log("For Loop: 10 to 1");
+for (let i = 10; i >= 1; i--) {
+    console.log(i);
+}
+
+
+// ================= WHILE LOOP =================
+// A while loop checks the condition first.
+// It runs ONLY if the condition is true.
+//
+// Real-life example:
+// Only if you have permission, you can enter.
+let count = 2;
+
+while (count <= 5) {
+    console.log("Hi");
+    count++;
+}
+
+// Nothing will be printed because
+// 6 <= 5 is false.
+
+
+// ================= DO WHILE LOOP =================
+// A do-while loop runs AT LEAST ONCE.
+// After running once, it checks the condition.
+//
+// Real-life example:
+// "You can do the task once, then they check your ID.
+// If it's valid, you continue; otherwise, you stop."
+
+let number = 7;
+
+do {
+    console.log("Hi");
+} while (number < 5);
+
+// "Hi" is printed once because do-while
+// executes the code first and checks later.
+
+</script>
+
+</body>
+</html>
