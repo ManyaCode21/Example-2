@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecting</title>
+</head>
+<body>
+
+    <p id="p1">This is First paragraph</p>
+    <p>This is Second paragraph</p>
+
+    <div class="box">This is Div - 0</div>
+    <div class="box">This is Div - 1</div>
+
+    <p>This is Third Paragraph</p>
+
+    <div class="demo">Box - 0</div>
+    <div class="demo">Box - 1</div>
+
+    <script>
+
+        // Select HTML Tags in JS
+        // Element = HTML Tag
+
+        // 1. getElementById()
+        const abc = document.getElementById("p1");
+        console.log(abc);
+
+        // 2. ClassName
+        const xyz = document.getElementsByClassName("box");
+        console.log(xyz);
+        console.log(xyz[1]);
+
+        // 3. TagName
+        const pqr = document.getElementsByTagName("p");
+        console.log(pqr);
+        console.log(pqr[1]);
+
+        // 4. querySelector
+        // Follow the rules of CSS: #id, .classname, tagname
+
+        // Single Tag
+        const tags = document.querySelector(".demo");
+        console.log(tags);
+
+        // Multiple Tag
+        const tag2 = document.querySelectorAll(".demo");
+        console.log(tag2);
+
+    </script>
+
+</body>
+</html>

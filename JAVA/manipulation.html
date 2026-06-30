@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulation</title>
+</head>
+<body>
+
+    <h1 id="demo1">Hello</h1>
+
+    <div class="demo2">Old Content</div>
+
+    <button id="demo3">Login</button>
+
+    <script>
+
+        // 1. Change of Text Content
+        // Select Tag
+        const ele = document.getElementById("demo1");
+        console.log(ele);
+        ele.textContent = "Welcome To Amazon";
+
+        // OR
+        // ele.innerHTML = "Welcome To Amazon";
+
+        // 2. Change/Update the HTML Tag
+        const ele1 = document.querySelector(".demo2");
+        ele1.innerHTML = "<h2>This is Heading</h2>";
+
+        // 3. Change the Style
+        const ele2 = document.getElementById("demo3");
+
+        ele2.style.backgroundColor = "Blue";
+        ele2.style.color = "White";
+        ele2.textContent = "Logout";
+
+    </script>
+
+</body>
+</html>
