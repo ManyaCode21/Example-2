@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #mydiv{
+            width: 500px;
+            height: 500px;
+            background-color: blue;
+            overflow: scroll;
+        }
+
+        .content{
+            height: 1000px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Types Of Events</h1>
+
+    <button id="mybtn">Click Me</button>
+
+    <input id="myInput" placeholder="Search ...">
+
+    <div id="mydiv">
+        <div class="content">Scrollo inside me</div>
+    </div>
+
+    <script>
+
+        // Syntax
+        // TagName.addEventListener('type of event', function(){})
+
+        const button = document.getElementById("mybtn");
+        const input = document.getElementById("myInput");
+        const div = document.getElementById("mydiv");
+
+        // 1. Click
+        button.addEventListener('click', function () {
+            alert('Logged in');
+        });
+
+        // Input - keyboard action - keyup and keydown
+
+        // keyup - key is released
+        input.addEventListener('keyup', function (e) {
+            console.log('Key Released ' + e.key);
+        });
+
+        // keydown - key pressed
+        input.addEventListener('keydown', function (e) {
+            console.log('Key Pressed ' + e.key);
+        });
+
+        // mouse event
+        div.addEventListener('mouseover', function () {
+            div.style.backgroundColor = "orange";
+        });
+
+        div.addEventListener('mouseout', function () {
+            div.style.backgroundColor = "green";
+        });
+
+        // scroll
+        div.addEventListener('scroll', function () {
+            console.log("Scrolled");
+        });
+
+    </script>
+
+</body>
+</html>

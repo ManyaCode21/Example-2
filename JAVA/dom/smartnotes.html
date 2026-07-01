@@ -37,6 +37,11 @@
         color: white;
         border: none;
         cursor: pointer;
+        border-radius: 50%;
+    }
+
+    button:hover {
+        background: #0056b0;
     }
 
     ul{
@@ -82,19 +87,16 @@
 </div>
 
 <script>
+let notes = [];
 
-let notes = [];      // Array to store notes
-
-function addNote(){
+function addNote() {
 
     let input = document.getElementById("noteInput");
     let message = document.getElementById("message");
-    let noteList = document.getElementById("noteList");
-    let total = document.getElementById("total");
 
     let value = input.value;
 
-    if(value === ""){
+    if (value === "") {
         message.innerHTML = "Please write something";
         return;
     }
@@ -102,29 +104,50 @@ function addNote(){
     notes.push(value);
     console.log(notes);
 
-    let li = document.createElement("li");
-    li.innerHTML = value;
-    noteList.appendChild(li);
-
-    total.innerHTML = notes.length;
-
     input.value = "";
     message.innerHTML = "";
+
+    displayNotes();
 }
 
+
+// Function Display
+function displayNotes() {
+
+    let list = document.getElementById("noteList");
+    let total = document.getElementById("total");
+
+    list.innerHTML = "";
+
+    // for loop to access the data of array
+    for (let i = 0; i < notes.length; i++) {
+
+        // Tag = Element
+        let li = document.createElement("li");
+
+        // Put array value inside li
+        li.innerHTML = notes[i];
+
+        // Add li into ul
+        list.appendChild(li);
+    }
+
+    total.innerHTML = notes.length;
+}
+
+
 // Theme Change Task
-function toggleMode(){
+function toggleMode() {
 
     let body = document.getElementById("body");
 
-    if(body.classList.contains("dark")){
+    if (body.classList.contains("dark")) {
         body.classList.remove("dark");
-    }
-    else{
+    } else {
         body.classList.add("dark");
     }
 }
 
 </script>
 </body>
-</html>
+</html>    
