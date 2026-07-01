@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Notes</title>
+
+<style>
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        margin-top: 100px;
+    }
+
+    .container{
+        background: white;
+        padding: 20px;
+        width: 350px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2{
+        text-align: center;
+    }
+
+    input{
+        width: 70%;
+        padding: 10px;
+    }
+
+    button{
+        padding: 10px;
+        background: cornflowerblue;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    ul{
+        list-style: none;
+        padding: 0;
+    }
+
+    li{
+        background: #f1f1f1;
+        padding: 10px;
+        margin-top: 10px;
+    }
+
+    .dark{
+        background: #222;
+        color: white;
+    }
+
+    .dark .container{
+        background: #333;
+    }
+</style>
+</head>
+
+<body id="body" class="">
+<div class="container">
+
+    <h2>Smart Notes</h2>
+
+    <input type="text" id="noteInput" placeholder="write a note">
+    <button onclick="addNote()">Add</button>
+
+    <p id="message"></p>
+
+    <ul id="noteList">
+
+    </ul>
+
+    <p>Total Notes: <span id="total">0</span></p>
+
+    <button onclick="toggleMode()">🌙</button>
+
+</div>
+
+<script>
+
+let notes = [];      // Array to store notes
+
+function addNote(){
+
+    let input = document.getElementById("noteInput");
+    let message = document.getElementById("message");
+    let noteList = document.getElementById("noteList");
+    let total = document.getElementById("total");
+
+    let value = input.value;
+
+    if(value === ""){
+        message.innerHTML = "Please write something";
+        return;
+    }
+
+    notes.push(value);
+    console.log(notes);
+
+    let li = document.createElement("li");
+    li.innerHTML = value;
+    noteList.appendChild(li);
+
+    total.innerHTML = notes.length;
+
+    input.value = "";
+    message.innerHTML = "";
+}
+
+// Theme Change Task
+function toggleMode(){
+
+    let body = document.getElementById("body");
+
+    if(body.classList.contains("dark")){
+        body.classList.remove("dark");
+    }
+    else{
+        body.classList.add("dark");
+    }
+}
+
+</script>
+</body>
+</html>
